@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="/stylesheets/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="/stylesheets/style.css" rel="stylesheet">
+    <link href="/stylesheets/bootstrap-table.css" rel="stylesheet">
+    <link href="/stylesheets/mycss.css" rel="stylesheet">
+    <link rel="stylesheet" id="compiled.css-css" href="/stylesheets/compiled.min.css" type="text/css" media="all">
+  </head>
+  <body class="mybody">
+    {{{body}}}
+  <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="/javascripts/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="/javascripts/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="/javascripts/mdb.min.js"></script>
+    <script src="/javascripts/bootstrap-table.js"></script>
+    <script src="/javascripts/star-rating.js"></script>
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/compiled.min.js"></script>
+    <script type="text/javascript" language="javascript">
+   $(document).ready(function() {
+    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+        e.preventDefault();
+        $(this).siblings('a.active').removeClass("active");
+        $(this).addClass("active");
+        var index = $(this).index();
+        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+    });
+
+});
+ </script>
+ <script>
+   // Material Select Initialization
+ $(document).ready(function() {
+    $('.mdb-select').material_select();
+  });
+ </script>
+  </body>
+</html>

@@ -1,0 +1,260 @@
+
+  <!-- Start your project here-->
+  <nav class="navbar navbar-expand-md navbar-dark double-nav"
+    style="background-color: #243a51; margin-bottom: 30px">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"><a
+          class="nav-link waves-effect waves-light" href="#">Home <span
+            class="sr-only">(current)</span></a></li>
+        <li class="nav-item"><a
+          class="nav-link waves-effect waves-light" href="#">Features</a></li>
+        <li class="nav-item"><a
+          class="nav-link waves-effect waves-light" href="#">Pricing</a></li>
+        <li class="nav-item dropdown"><a
+          class="nav-link dropdown-toggle waves-effect waves-light"
+          id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">Dropdown </a>
+          <div class="dropdown-menu dropdown-primary"
+            aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item waves-effect waves-light" href="#">Action</a>
+            <a class="dropdown-item waves-effect waves-light" href="#">Another
+              action</a> <a class="dropdown-item waves-effect waves-light" href="#">Something
+              else here</a>
+          </div></li>
+      </ul>
+      <!-- <form class="form-inline waves-effect waves-light">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        </form> -->
+      <ul class="navbar-nav ">
+        <li class="nav-item"><a href="#" id="navbar-static-login"
+          class="nav-link waves-effect waves-light"><i
+            class="fa fa-sign-in mr-1"></i><span
+            class="clearfix d-none d-sm-inline-block">Log In</span></a></li>
+      </ul
+    </div>
+  </nav>
+  <!-- /Start your project here-->
+
+  <div id="mainContainer1" class="container">
+    <div class="row">
+      <div class="list-group bhoechie-tab-menu col-lg-2" id="myList"
+        role="tablist">
+        <div class="list-group">
+          <a class="list-group-item list-group-item-action active"
+            data-toggle="list" href="#thongtin" role="tab"><i
+            class="fa fa-user"></i> Thông tin cá nhân</a> <a
+            class="list-group-item list-group-item-action" data-toggle="list"
+            href="#dsbaiviet" role="tab"><i class="fa fa-file"
+            aria-hidden="true"></i> Danh sách bài viết</a>
+        </div>
+      </div>
+      <!-- Tab panels -->
+      <div class="tab-content col-lg-10">
+
+        <!--Panel 1-->
+        <div class="tab-pane fade in show active" id="thongtin"
+          role="tabpanel">
+          <div class="row">
+            <div class="col-md-6">
+              <h1 class="myblue"
+                style="text-align: center; font-size: 24px; border-bottom: 1px solid #357dc6; margin-bottom: 40px">Thông
+                tin cơ bản</h1>
+              <div class="md-form">
+                <i class="fa fa-user prefix grey-text"></i> <input type="text"
+                  id="hovaten" class="form-control"><label for="hovaten">Họ
+                  và tên</label>
+              </div>
+              <div class="md-form">
+                <i class="fa fa-calendar prefix grey-text"></i> <input
+                  type="date" id="ngaysinh" class="form-control"> <!-- <label for="ngaysinh">Ngày sinh</label> -->
+              </div>
+              <div class="md-form">
+
+                <fieldset class="form-group ">
+                  <i class="fa fa-venus-mars prefix grey-text"></i> <input
+                    name="gioitinh" type="radio" id="nam" checked="checked"><label
+                    for="nam">Nam</label> <input name="gioitinh" type="radio"
+                    id="nu"><label for="nu">Nữ</label>
+                </fieldset>
+              </div>
+              <div class="md-form">
+                <i class="fa fa-address-book prefix grey-text"></i> <input
+                  type="text" id="diachi" class="form-control"><label
+                  for="diachi">Địa chỉ</label>
+              </div>
+              <div class="md-form">
+                <i class="fa fa-group prefix grey-text"></i> <input type="text"
+                  id="coquan" class="form-control"><label for="coquan">Cơ
+                  quan</label>
+              </div>
+
+            </div>
+            <div class="col-md-6">
+              <h1 class="myblue"
+                style="text-align: center; font-size: 24px; border-bottom: 1px solid #357dc6; margin-bottom: 40px">Thông
+                tin liên lạc</h1>
+              <div class="md-form">
+                <i class="fa fa-envelope prefix grey-text"></i> <input
+                  type="text" id="email" class="form-control"><label
+                  for="email">Email</label>
+              </div>
+              <div class="md-form">
+                <i class="fa fa-phone prefix grey-text"></i> <input type="text"
+                  id="sdt" class="form-control"><label for="sdt">Số
+                  điện thoại</label>
+              </div>
+
+            </div>
+          </div>
+          <div class="mywrapper">
+            <button class="btn btn-default waves-effect waves-light mybutton">Cập
+              nhật</button>
+          </div>
+        </div>
+        <!--/.Panel 1-->
+        <!--Panel 2-->
+        <div class="tab-pane fade" id="dsbaiviet" role="tabpanel">
+          <h1 class="myblue"
+            style="text-align: center; font-size: 24px; border-bottom: 1px solid #357dc6;">Danh sách bài viết được giao phản biện</h1>
+
+          <div class="table-responsive">
+            <table class="table table-striped" data-toggle="table"
+              data-search="true" data-select-item-name="toolbar1"
+              data-pagination="true" data-sort-name="name"
+              data-sort-order="desc">
+              <thead>
+                <tr>
+
+                  <th data-sortable="true">Tiêu đề</th>
+                  <th data-sortable="true">Tác giả</th>
+                  <th data-sortable="true">Ngày</th>
+                  <th data-sortable="true">Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+
+                    <td>Experiences of Advanced High School Students in Synchronous Online Recitations</td>
+                    <td>Greg Mayer, Jeremy Lingle, Marion Usselman</td>
+                    <td>07/04/2017</td>
+                    <td><a href="phieuphanbien.html#" target="_blank" style="color: blue" title="Vào trang phản biện">Link</a></td>
+                  </tr>
+                  <tr>
+
+                    <td>Experiences of Advanced High School Students in Synchronous Online Recitations</td>
+                    <td>Greg Mayer, Jeremy Lingle, Marion Usselman</td>
+                    <td>07/04/2017</td>
+                    <td><a href="#" target="_blank" style="color: blue" title="Vào trang phản biện">Link</a></td>
+                  </tr>
+                  <tr>
+
+                    <td>Experiences of Advanced High School Students in Synchronous Online Recitations</td>
+                    <td>Greg Mayer, Jeremy Lingle, Marion Usselman</td>
+                    <td>07/04/2017</td>
+                    <td><a href="#" target="_blank" style="color: blue" title="Vào trang phản biện">Link</a></td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+        <!--/.Panel 2-->
+      </div>
+    </div>
+
+  </div>
+  <script type="text/javascript" language="javascript">
+    CKEDITOR.replace('mysub', {
+      width : '800px',
+      height : '300px'
+    });
+    CKEDITOR.config.autoParagraph = false;
+    var data = CKEDITOR.instances.noiDung.getData();
+  </script>
+  <script>
+    initSample();
+  </script>
+
+  <footer class="page-footer center-on-small-only"
+    style="background-color: #243a51">
+
+    <!--Footer links-->
+    <div class="container-fluid">
+      <div class="row">
+        <!--First column-->
+        <div class="col-lg-3 col-md-6 ml-auto">
+          <h5 class="title mb-3">
+            <strong>About material design</strong>
+          </h5>
+          <p>Material Design (codenamed Quantum Paper) is a design
+            language developed by Google.</p>
+          <p>Material Design for Bootstrap (MDB) is a powerful Material
+            Design UI KIT for most popular HTML, CSS, and JS framework -
+            Bootstrap.</p>
+        </div>
+        <!--/.First column-->
+        <hr class="w-100 clearfix d-sm-none">
+          <!--Second column-->
+        <div class="col-lg-2 col-md-6 ml-auto">
+          <h5 class="title mb-3">
+            <strong>First column</strong>
+          </h5>
+          <ul>
+            <li><a href="#!">Link 1</a></li>
+            <li><a href="#!">Link 2</a></li>
+            <li><a href="#!">Link 3</a></li>
+            <li><a href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <!--/.Second column-->
+        <hr class="w-100 clearfix d-sm-none">
+          <!--Third column-->
+        <div class="col-lg-2 col-md-6 ml-auto">
+          <h5 class="title mb-3">
+            <strong>Second column</strong>
+          </h5>
+          <ul>
+            <li><a href="#!">Link 1</a></li>
+            <li><a href="#!">Link 2</a></li>
+            <li><a href="#!">Link 3</a></li>
+            <li><a href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <!--/.Third column-->
+        <hr class="w-100 clearfix d-sm-none">
+          <!--Fourth column-->
+        <div class="col-lg-2 col-md-6 ml-auto">
+          <h5 class="title mb-3">
+            <strong>Third column</strong>
+          </h5>
+          <ul>
+            <li><a href="#!">Link 1</a></li>
+            <li><a href="#!">Link 2</a></li>
+            <li><a href="#!">Link 3</a></li>
+            <li><a href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <!--/.Fourth column-->
+      </div>
+    </div>
+    <!--/.Footer links-->
+    <!--Copyright-->
+    <div class="footer-copyright">
+      <div class="container-fluid">
+        © 2015 Copyright: <a href="https://www.MDBootstrap.com">
+          MDBootstrap.com </a>
+
+      </div>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+ 
