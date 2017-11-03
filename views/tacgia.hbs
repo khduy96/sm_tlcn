@@ -54,6 +54,11 @@
           {{#if error}}
             <div class="alert alert-danger">{{error}}</div>
           {{/if}}
+    <div class="alert alert-danger fade in alert-dismissable show" id="messageart" style="display:none">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+      </button><strong>Danger!</strong>
+    </div>
     <div class="row">
       <div class="list-group bhoechie-tab-menu col-lg-2" >
         <div class="list-group">
@@ -293,7 +298,7 @@
         <!--Panel 4-->
        
        <div class="bhoechie-tab-content">
-        <form method="post" action="/tacgia/submitart" encType="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data" id="formsubmitart" >
           <h1 class="myblue"
             style="text-align: center; font-size: 24px; border-bottom: 1px solid #357dc6; margin-bottom: 40px">Thông
             tin bài viết</h1>
@@ -393,7 +398,7 @@
 
           </div>
           <div class="mywrapper">
-            <button class="btn btn-default waves-effect waves-light mybutton">Gửi
+            <button id="btnsubmit" type="submit" class="btn btn-default waves-effect waves-light mybutton">Gửi
               bài</button>
           </div>
         </form>
@@ -405,7 +410,6 @@
     </div>
 
   </div>
-
   <footer class="page-footer center-on-small-only"
     style="background-color: #243a51">
 
@@ -485,6 +489,62 @@
     CKEDITOR.replace('cmysub', {
       width : '100%',
       height : '300px'
+    });
+    CKEDITOR.config.autoParagraph = false;
+		var data = CKEDITOR.instances.cmysub.getData();
+  </script>
+  <script type="text/javascript" language="javascript">
+    $(document).ready(function () {
+        var MessageManager = {
+              show: function(content) {
+                  $('#messageart').html(content).show();
+                  setTimeout(function(){
+                      $('#messageart').hide();
+                  }, 5000);
+              }
+          };
+
+        $("#btnsubmit").click(function (event) {
+            //stop submit the form, we will post it manually.
+            event.preventDefault();
+            for ( instance in CKEDITOR.instances )
+                CKEDITOR.instances[instance].updateElement();
+            // Get form
+            var form = $('#formsubmitart')[0];
+        // Create an FormData object
+            var data = new FormData(form);
+        // If you want to add an extra field for the FormData
+            //data.append("CustomField", "This is some extra data, testing");
+        // disabled the submit button
+        $("#btnsubmit").prop("disabled", true);
+            $.ajax({
+                type: "POST",
+                enctype: 'multipart/form-data',
+                url: "/tacgia/submitart",
+                data: data,
+                processData: false,
+                contentType: false,
+                cache: false,
+                timeout: 2000,
+                success: function (data) {
+                    if(data.noti=='0'){
+                      //alert("thất bại");
+                      MessageManager.show('Vui lòng điền đầy đủ thông tin');
+                    }
+                    else{
+                     // alert(data.title);
+                    // MessageManager.show(data.title);
+                    }
+                    console.log("SUCCESS : ", data);
+                    $("#btnsubmit").prop("disabled", false);
+                },
+                error: function (e) {
+                    alert(e.responseText);
+                    console.log("ERROR : ", e);
+                    $("#btnsubmit").prop("disabled", false);
+                }
+            });
+        });
     });
   </script>
  

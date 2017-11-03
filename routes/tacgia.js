@@ -26,7 +26,6 @@ router.get('/', function(req, res) {
 });
 //insert
 router.post('/submitart', function(req, res){
-  
   //
   let scaFile = req.files.ccafile;
   
@@ -40,12 +39,15 @@ router.post('/submitart', function(req, res){
   req.checkBody('ctgemail', 'Bạn cần nhập Email').notEmpty();
 //
   var errors = req.validationErrors();
-  if(errors ){
-    if(!scaFile){
-      req.flash('error', 'Bạn chưa chọn file');
-    }
-    req.flash('error_msg', errors);
-    res.redirect('/tacgia');
+  if(errors || !scaFile){
+    //if(!scaFile){
+      //req.flash('error', 'Bạn chưa chọn file');
+     // res.json({noti:'1'});
+    //}
+    //req.flash('error_msg', errors);
+    console.log(errors);
+    //res.redirect('/tacgia');
+    res.json({noti:'0'});
   }
   else{
 
@@ -85,12 +87,12 @@ router.post('/submitart', function(req, res){
           console.log('File '+sfileName + 'uploaded into' + sdirFile);
         });
         console.log(article);
+        res.json(article);
       });
       req.flash('success_msg', 'You are submited article success');
-      res.redirect('/tacgia');
+      //res.redirect('/tacgia');
    // }
   }
-  
 });
 //update
 router.put('/updateart/:cid',function(req,res){
